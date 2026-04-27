@@ -17,7 +17,7 @@ def saveLevelAsImage(level, path):
     for y in range(1, IMAGE_ROW + 1):
         for x in range(1, IMAGE_COLUMN + 1):
             from_image = Image.open(IMAGES_PATH + "/" + str(level[y - 1][x - 1]) + ".jpg").resize(
-                (IMAGE_SIZE, IMAGE_SIZE), Image.ANTIALIAS)
+                (IMAGE_SIZE, IMAGE_SIZE), Image.LANCZOS)
             to_image.paste(from_image, ((x - 1) * IMAGE_SIZE, (y - 1) * IMAGE_SIZE))
     return to_image.save(path + ".jpg")
 
@@ -28,7 +28,7 @@ def saveAndMark(level, name, S, T):
     for y in range(1, IMAGE_ROW + 1):
         for x in range(1, IMAGE_COLUMN + 1):
             from_image = Image.open(IMAGES_PATH + "/" + str(level[y - 1][x - 1]) + ".jpg").resize(
-                (IMAGE_SIZE, IMAGE_SIZE), Image.ANTIALIAS)
+                (IMAGE_SIZE, IMAGE_SIZE), Image.LANCZOS)
             to_image.paste(from_image, ((x - 1) * IMAGE_SIZE, (y - 1) * IMAGE_SIZE))
             for pos in S:
                 lt = (pos[1] * 16 + 1.5, pos[0] * 16 + 1.5)

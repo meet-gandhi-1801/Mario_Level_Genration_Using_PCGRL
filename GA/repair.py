@@ -8,13 +8,13 @@ from CNet.model import CNet
 
 
 # parameter
-Threshold = 0.05
+Threshold = 0.03
 P_M0 = 0.8
 P_M1 = 0  # 1/len(S)
 RRT_M = 4
-Lamda = 20
-Iteration = 50
-RepairRatio = 0.3
+Lamda = 50
+Iteration = 200
+RepairRatio = 0.6
 Repeat = 1
 origin = None
 net = None
@@ -308,7 +308,7 @@ def GA(net_name, lv_name, result_path, isfigure=True, isrepair=True):
     global origin
     global net
     global score
-    net = torch.load(net_name).to("cpu")
+    net = torch.load(net_name, weights_only=False).to("cpu")
     net.eval()
     score = []
     for i in range(Iteration):

@@ -47,7 +47,7 @@ class Identify:
 
     def getU(self, lv):
         w, h = len(lv), len(lv[0])
-        lv = np.lib.pad(lv, (1, 1), 'constant', constant_values=11)
+        lv = np.pad(lv, (1, 1), 'constant', constant_values=11)
         res = set()
         for i in range(1, w + 1):
             for j in range(1, h + 1):
@@ -61,7 +61,7 @@ class Identify:
 
     def getWrong(self, lv, pos, ouput=False):
         w, h = len(lv), len(lv[0])
-        lv = np.lib.pad(lv, (1, 1), 'constant', constant_values=11)
+        lv = np.pad(lv, (1, 1), 'constant', constant_values=11)
         res = set()
         for x, y in pos:
             i, j = x + 1, y + 1
