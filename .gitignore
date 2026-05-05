@@ -138,4 +138,9 @@ Thumbs.db
 *.pkl
 *.pth.tar
 GA/result/
+LevelGenerator/GAN/Destroyed/
+generated_level_*.txt
+hardest_level*.txt
 *.lnk
+
+.early.coverage

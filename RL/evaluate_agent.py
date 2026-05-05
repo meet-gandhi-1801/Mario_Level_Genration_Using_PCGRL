@@ -1,5 +1,8 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from CNet.model import CNet
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from stable_baselines3 import PPO
 from train_agent import MarioRepairEnv, get_wrong_tiles
@@ -11,7 +14,7 @@ LV_PATH = os.path.join(
 
 print("Loading environment and agent...")
 env = MarioRepairEnv(LV_PATH)
-model = PPO.load("RL/mario_repair_agent")
+model = PPO.load("mario_repair_agent")
 
 obs, _ = env.reset()
 wrong_before = len(get_wrong_tiles(env.level))
